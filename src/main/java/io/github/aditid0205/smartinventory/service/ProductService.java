@@ -1,6 +1,7 @@
 package io.github.aditid0205.smartinventory.service;
 
-import io.github.aditid0205.smartinventory.Entity.Product;
+import io.github.aditid0205.smartinventory.entity.Product;
+import io.github.aditid0205.smartinventory.exception.ProductNotFoundException;
 import io.github.aditid0205.smartinventory.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +27,8 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Optional<Product> getProductById(Long id) {
-        return productRepository.findById(id);
+    public Product getProductById(Long id) {
+        return productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product not found with id:" + id));
     }
 
 

@@ -1,6 +1,6 @@
 package io.github.aditid0205.smartinventory.repository;
 
-import io.github.aditid0205.smartinventory.Entity.Product;
+import io.github.aditid0205.smartinventory.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

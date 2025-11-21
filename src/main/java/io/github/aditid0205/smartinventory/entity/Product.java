@@ -1,4 +1,4 @@
-package io.github.aditid0205.smartinventory.Entity;
+package io.github.aditid0205.smartinventory.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

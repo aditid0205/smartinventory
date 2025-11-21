@@ -1,7 +1,6 @@
 package io.github.aditid0205.smartinventory.entity;
 
 
-import io.github.aditid0205.smartinventory.Entity.Product;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;

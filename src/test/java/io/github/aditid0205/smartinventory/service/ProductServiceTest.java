@@ -1,6 +1,6 @@
 package io.github.aditid0205.smartinventory.service;
 
-import io.github.aditid0205.smartinventory.Entity.Product;
+import io.github.aditid0205.smartinventory.entity.Product;
 import io.github.aditid0205.smartinventory.repository.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

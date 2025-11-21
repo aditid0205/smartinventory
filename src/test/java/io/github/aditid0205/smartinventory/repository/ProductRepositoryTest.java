@@ -1,6 +1,6 @@
 package io.github.aditid0205.smartinventory.repository;
 
-import io.github.aditid0205.smartinventory.Entity.Product;
+import io.github.aditid0205.smartinventory.entity.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
