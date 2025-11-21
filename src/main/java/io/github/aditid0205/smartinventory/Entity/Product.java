@@ -1,33 +1,51 @@
 package io.github.aditid0205.smartinventory.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+
+import java.math.BigDecimal;
+
 
 @Entity
 public class Product {
     @Id
-    private int productId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long productId;
+    @NotNull
+    @NotBlank(message = "Name is mandatory")
     private String name;
+    @NotNull
+    @NotBlank(message = "Brand is mandatory")
     private String brand;
-    private Double price;
+
+    @Column(precision = 10, scale = 2)
+    private BigDecimal price = BigDecimal.valueOf(5.0);
+    @NotNull
+    @NotBlank(message = "Sku is mandatory")
+    @Column(unique = true)
     private String sku;
 
-    public Product(String name, String brand, Double price, String sku) {
+    public Product(String name, String brand, BigDecimal price, String sku) {
         this.name = name;
         this.brand = brand;
         this.price = price;
         this.sku = sku;
     }
 
-    public Product() {
-
+    public Product(String name, String brand, String price, String sku) {
+        this.name = name;
+        this.brand = brand;
+        this.price = new BigDecimal(price);
+        this.sku = sku;
     }
 
-    public int getProductId() {
+    public Product() {}
+
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 
@@ -47,11 +65,11 @@ public class Product {
         this.brand = brand;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
